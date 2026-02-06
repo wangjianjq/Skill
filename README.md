@@ -1,4 +1,4 @@
-[中文版](./readmeEN.md) | English
+中文 | [English](./READMEEN.md)
 # Agents-MD Pro v7.5 Ultimate — AI 原生被动上下文开发框架
 
 > **版本**: 7.5.0 Ultimate | **理念**: 零决策负担 & 被动上下文
@@ -412,6 +412,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 > 通过 Agents-MD Pro v7.5，开发者可获得一个**安全、规范、高质量**的
 > AI 协同编码环境，显著提升从原型到交付的全程可控性与专业度。
+
 
 
 
