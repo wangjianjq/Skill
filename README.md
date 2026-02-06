@@ -450,7 +450,7 @@ includes a "Party Mode" for multi-agent collaboration.
 
 <div id="chinese-content"></div>
 
-[⬆ 返回顶部](#top)
+[⬆ Back to Top](#top)
 
 ## 中文版
 
@@ -869,6 +869,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 > AI 协同编码环境，显著提升从原型到交付的全程可控性与专业度。
 
 [⬆ 返回顶部](#top)
+
 
 
 
