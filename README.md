@@ -1,9 +1,9 @@
-<div id="top"></div>
 [中文版](#chinese-content) | [English](#english-content)
 
 ---
 
 <div id="english-content"></div>
+<div id="top"></div>
 
 ## English Version
 This is the English description of your project. 
@@ -869,6 +869,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 > AI 协同编码环境，显著提升从原型到交付的全程可控性与专业度。
 
 [⬆ 返回顶部](#top)
+
 
 
 
