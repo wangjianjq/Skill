@@ -1,3 +1,4 @@
+中文 | [English](./README.md)
 # Agents-MD Pro v7.5 Ultimate — AI-Native Passive Context Development Framework
 
 > **Version**: 7.5.0 Ultimate | **Philosophy**: Zero-Decision Burden & Passive Context
