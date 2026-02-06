@@ -6,14 +6,10 @@
 
 ## English Version
 This is the English description of your project. 
-
-
-## English Version
-This is the English description of your project. 
 # Agents-MD Pro v7.5 Ultimate — AI-Native Passive Context Development Framework
 
 > **Version**: 7.5.0 Ultimate | **Philosophy**: Zero-Decision Burden & Passive Context
-> **Last Audit**: 2026-02-02
+> **Last Audit**: 2026-02-07
 
 ---
 
@@ -453,10 +449,12 @@ includes a "Party Mode" for multi-agent collaboration.
 
 <div id="chinese-content"></div>
 
+## 中文版
+
 # Agents-MD Pro v7.5 Ultimate — AI 原生被动上下文开发框架
 
 > **版本**: 7.5.0 Ultimate | **理念**: 零决策负担 & 被动上下文
-> **最新审计**: 2026-02-02
+> **最新审计**: 2026-02-07
 
 ---
 
@@ -866,6 +864,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 > 通过 Agents-MD Pro v7.5，开发者可获得一个**安全、规范、高质量**的
 > AI 协同编码环境，显著提升从原型到交付的全程可控性与专业度。
+
 
 
 
