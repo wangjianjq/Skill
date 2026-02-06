@@ -1,0 +1,18 @@
+# Aider Configuration
+# This project uses Agents-MD Pro Framework
+
+# Read files on startup
+read:
+  - AGENTS.md
+  - PROJECT_GOVERNANCE.md
+
+# Encoding
+encoding: utf-8
+
+# Git integration
+auto-commits: true
+dirty-commits: false
+
+# Model settings (user should configure their preferred model)
+# model: gpt-4o
+# model: claude-3-5-sonnet

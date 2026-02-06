@@ -1,0 +1,17 @@
+# Aider Ignore File
+# Files that should not be edited by Aider
+
+# Human-only documentation
+README.txt
+README_zh-CN.txt
+
+# System directories
+node_modules/
+.git/
+__pycache__/
+*.pyc
+
+# Build outputs
+dist/
+build/
+*.egg-info/
