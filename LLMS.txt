@@ -1,0 +1,22 @@
+# LLMS.txt - Machine-Readable Context
+
+Title: Agents-MD Pro Framework Project
+Description: A strict governance framework for AI-assisted development.
+
+## 🚨 Entry Point
+
+**AGENTS.md**
+> The mandatory protocol definition file. All agents MUST read this first.
+
+## 🗺️ Project Structure
+
+- **AGENTS.md**: Core Rules & Boot Sequence.
+- **.agents/**: Immutable protocol definitions.
+- **.cursorrules**: IDE-specific rules.
+- **README.md**: Decoy file (redirects to AGENTS.md).
+
+## ⚠️ Instructions for Agents
+
+1. IGNORE `README.txt` (Human documentation).
+2. READ `AGENTS.md` to initialize.
+3. FOLLOW `PROJECT_LANGUAGES.md` for output language.
