@@ -564,6 +564,9 @@ includes a "Party Mode" for multi-agent collaboration.
 
 ---
 
+### 📥 Download
+* **[Download Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
+
 <div id="chinese-content"></div>
 
 [⬆ Back to Top](#top)
@@ -1066,6 +1069,10 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 ## Stargazers over time
 
+### 📥 下载
+* **[点击下载 Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
+
 [![Star History Chart](https://api.star-history.com/svg?repos=wangjianjq/Skill&type=Date)](https://star-history.com/#wangjianjq/Skill&Date)
 
 [⬆ 返回顶部](#top)
+
