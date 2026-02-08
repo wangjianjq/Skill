@@ -1067,6 +1067,8 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 ## Star History
 
+## Star History
+
 [![Star History Chart](https://api.star-history.com/svg?repos=wangjianjq/Skill&type=date&logscale&legend=top-left)](https://www.star-history.com/#wangjianjq/Skill&type=date&logscale&legend=top-left)
 
 ### 📥 下载
@@ -1074,7 +1076,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 [⬆ 返回顶部](#top)
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://www.star-history.com/embed?secret=Z2hwXzRDSTE0TUhzOFhDMklhOENmZXhWZmNzdDVrMU9DbzRTWnM5Qg==#wangjianjq/Skill&type=date&logscale&legend=top-left" frameBorder="0"></iframe>
+
 
 
 
