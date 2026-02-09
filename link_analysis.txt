@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+================================================================================
+README.md 链接验证报告
+================================================================================
+
+【英文版分析】
+--------------------------------------------------------------------------------
+
+找到 69 个链接, 44 个标题
+
+  File "C:\Users\WJ\Desktop\Skill\verify_readme_links.py", line 169, in <module>
+    analyze_readme()
+  File "C:\Users\WJ\Desktop\Skill\verify_readme_links.py", line 90, in analyze_readme
+    analyze_section(english_content, "English")
+  File "C:\Users\WJ\Desktop\Skill\verify_readme_links.py", line 130, in analyze_section
+    print(f"\n\u274c 发现 {len(broken_links)} 个失效链接:\n")
+UnicodeEncodeError: 'gbk' codec can't encode character '\u274c' in position 2: illegal multibyte sequence

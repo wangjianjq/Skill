@@ -9,10 +9,10 @@
 
 This is the English description of your project.
 
-# Agents-MD Pro v7.5 Ultimate — AI-Native Passive Context Development Framework
+# Agents-MD Pro v7.6 Ultimate — AI-Native Passive Context Development Framework
 
-> **Version**: 7.5.0 Ultimate | **Philosophy**: Zero-Decision Burden & Passive Context
-> **Last Audit**: 2026-02-07
+> **Version**: 7.6.0 Ultimate | **Philosophy**: Zero-Decision Burden & Passive Context
+> **Last Audit**: 2026-02-10
 
 ---
 
@@ -135,6 +135,7 @@ saves substantial rework time and Token consumption.
   (including WeChat Mini Program, native , React, Vue, Flutter, etc.)
 - 🧪 **Sandbox Evolution** — New technologies can be safely tested before official adoption
 - 🌍 **Global-First Design** — Automated i18n enforcement for multi-language projects
+- 🎭 **God Mode Mirroring** — Prefitted with a language mirroring protocol, ensuring all AI tools respond in your native language
 
 ---
 
@@ -625,10 +626,10 @@ includes a "Party Mode" for multi-agent collaboration.
 
 ## 中文版
 
-# Agents-MD Pro v7.5 Ultimate — AI 原生被动上下文开发框架
+# Agents-MD Pro v7.6 Ultimate — AI 原生被动上下文开发框架
 
-> **版本**: 7.5.0 Ultimate | **理念**: 零决策负担 & 被动上下文
-> **最新审计**: 2026-02-07
+> **版本**: 7.6.0 Ultimate | **理念**: 零决策负担 & 被动上下文
+> **最新审计**: 2026-02-10
 
 ---
 
@@ -662,6 +663,7 @@ includes a "Party Mode" for multi-agent collaboration.
   (含微信小程序、鸿蒙 HarmonyOS、React、Vue、Flutter 等主流框架)
 - 🧪 **沙盒进化机制** — 新技术可在沙盒中安全测试后再正式采纳
 - 🌍 **全球化优先设计** — 自动化 i18n 强制审计，支持多语言项目
+- 🎭 **上帝模式语言镜像** — 本项目预制了语言镜像协议，确保各种 AI 工具均使用您的母语进行回复
 
 ---
 

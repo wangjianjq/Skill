@@ -1,0 +1,58 @@
+Traceback (most recent call last):
+============================================================
+ README.md 链接验证
+============================================================
+
+[TOC] 找到 70 个目录链接
+[HEADERS] 找到 105 个章节标题
+
+[ERROR] 发现失效链接:
+
+  链接: [中文版](#chinese-content)
+  问题: 未找到对应的章节标题
+
+  链接: [English](#english-content)
+  问题: 未找到对应的章节标题
+
+  链接: [Core Mechanisms & Features](#core-mechanisms--features)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['core-mechanisms-features']
+
+  链接: [Hybrid Intelligence & Skills Ecosystem](#hybrid-intelligence--skills-ecosystem)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['hybrid-intelligence-skills-ecosystem', '混合智能与-skills-生态-hybrid-intelligence']
+
+  链接: [Memory Guardian](#memory-guardian)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['memory-guardian-system-resource-protection', '内存守护-memory-guardian系统资源保护']
+
+  链接: [内存守护](#内存守护-memory-guardian)
+  问题: 未找到对应的章节标题
+  File "C:\Users\WJ\Desktop\Skill\verify_readme_links.py", line 94, in <module>
+  建议: 可能的目标 -> ['memory-guardian-system-resource-protection', '内存守护-memory-guardian系统资源保护']
+
+  链接: [Two-Land Doctrine](#two-land-doctrine)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['two-land-doctrine-territory-based-access-control']
+
+  链接: [双域安全法则](#双域安全法则)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['双域安全法则领地式访问控制']
+
+  链接: [Red Button Rule](#red-button-rule)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['red-button-rule-safety-overrides']
+
+  链接: [危险动作警告法则](#危险动作警告法则)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['危险动作警告法则安全覆盖']
+
+  链接: [Full-Stack Polyglot QA & Testing](#full-stack-polyglot-qa--testing)
+  问题: 未找到对应的章节标题
+  建议: 可能的目标 -> ['full-stack-polyglot-qa-testing']
+
+    success = verify_readme_links(readme_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\WJ\Desktop\Skill\verify_readme_links.py", line 62, in verify_readme_links
+    print(f"  链接: [{text}](#{anchor})")
+UnicodeEncodeError: 'gbk' codec can't encode character '\u2b06' in position 7: illegal multibyte sequence

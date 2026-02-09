@@ -312,6 +312,10 @@ to ensure the BMAD runtime is active.
     - [YES] -> Read it and bind all future output to the listed languages.
     - [NO] -> If the task implies global reach, prompt for language selection.
 
+4. **GOD_MODE_CHECK**:
+    - **Trigger**: Read `.agents/skills/GOD_MODE.md`.
+    - **Action**: Verify if the current environment has the "God Mode" injection. If unsure/missing, execute the `Injection Logic` from `GOD_MODE.md`.
+
 ### `INIT_PROTOCOL` (First Contact)
 
 1. **ACTION**: Scan the file tree (`list_dir`) to understand the legacy structure.

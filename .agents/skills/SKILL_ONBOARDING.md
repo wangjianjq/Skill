@@ -2,7 +2,7 @@
 
 > **Purpose**: Conduct a one-time "Handshake Interview" with the user to establish their Developer Persona.
 > **Trigger**: Automatically triggered by `AGENTS.md` if `USER_PROFILE.md` is missing.
-> **Flow**: Entry Point -> Step 1 -> Step 2 -> Step 3 -> Generate Profile.
+> **Flow**: Entry Point -> Step 1 -> Step 2 -> Step 3 -> Step 4 (Tools) -> Generate Profile.
 
 ## 1. 🎤 The Friendly Opening (Mandatory Script)
 

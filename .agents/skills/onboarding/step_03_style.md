@@ -26,39 +26,9 @@ Ask the following question in the user's preferred language.
 
 **📌 重要提示**: 无论您选择哪种方式，您**随时**可以打断我并问‘你为什么那样做？’或‘解释这一部分’。我会立即针对该主题切换到解释模式。”
 
-## 💾 Generating the Profile (CRITICAL)
+## ⏭️ Action
 
-Once the user answers this final question, you **MUST** generate a file named `USER_PROFILE.md` in the project root.
+After the user replies:
 
-**Template**:
-
-```markdown
-# USER_PROFILE.md
-
-## 👤 Developer Persona
-- **Global Experience**: [Extracted from Step 1]
-- **Interaction Style**: [Extracted from Step 3]
-
-## 🧠 Tech Matrix (Contextual Overrides)
-> **Instructions for AI**: Read this matrix to adjust your behavior per file type.
-
-| Technology | User Proficiency (1-5) | AI Strategy |
-| :--- | :--- | :--- |
-| [Tech A] | [Score] | [Derived Mode: Step-by-Step / Normal / Concise] |
-| [Tech B] | [Score] | ... |
-
-## 🛡️ Preference Flags
-- **Detailed Explanations**: [Yes/No]
-- **Privacy/Safety Level**: [Standard/High]
-- **Communication Language**: [User's Language from Step 1]
-```
-
-## 🎉 Conclusion
-
-After writing the file, confirm to the user (in their language):
-
-**EN**:
-"Thank you! Your profile has been saved to `USER_PROFILE.md`. I am now ready to assist you according to your preferences."
-
-**ZH**:
-“谢谢！您的画像已保存至 `USER_PROFILE.md`。我已初步了解到了您的情况，今后我会按照目前的记录为您服务。现在让我们愉快的开始创作吧。”
+1. **Analyze** their preferred style.
+2. **Proceed** immediately to trigger `.agents/skills/onboarding/step_04_tools.md`.

@@ -1,0 +1,31 @@
+============================================================
+ README.md 链接验证
+============================================================
+
+[TOC] 找到 70 个目录链接
+[HEADERS] 找到 105 个章节标题
+
+[ERROR] 发现失效链接:
+
+  链接: [⬆ Back to Top](#top)
+  问题: 未找到对应的章节标题
+
+  链接: [⬆ 返回顶部](#top)
+  问题: 未找到对应的章节标题
+
+总计: 68 个有效链接, 2 个失效链接
+\n[SAMPLE] 有效链接示例 (前10个):
+  1. [中文版](#中文版) -> 中文版
+  2. [English](#english-version) -> English Version
+  3. [English Version](#english-version) -> English Version
+  4. [中文版](#中文版) -> 中文版
+  5. [Overview](#overview) -> Overview
+  6. [概述](#概述) -> 概述
+  7. [Core Value Proposition](#core-value-proposition) -> Core Value Proposition
+  8. [核心价值主张](#核心价值主张) -> 核心价值主张
+  9. [Project Highlights](#project-highlights) -> Project Highlights
+  10. [项目亮点](#项目亮点) -> 项目亮点
+
+============================================================
+发现问题,请修复失效链接
+============================================================

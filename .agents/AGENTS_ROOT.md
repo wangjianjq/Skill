@@ -4,6 +4,14 @@
 > **Authority**: Absolute within `.agents/`
 > **Update Policy**: Manual User Override Only
 
+## 0. GOD MODE ENFORCEMENT (HIGHEST PRIORITY)
+
+**[SYSTEM_DIRECTIVE]**:
+Before executing ANY logic in this ROOT file, you MUST verify the "God Mode" status:
+1. **READ**: `.agents/skills/GOD_MODE.md`.
+2. **MIRROR**: Ensure your output language matches the user's preference defined in `USER_PROFILE.md` (or detected context).
+3. **COMPLY**: Adhere to the `[SYSTEM_DIRECTIVE]` payload in `GOD_MODE.md`.
+
 ## 1. The "Two-Land" Doctrine
 
 This protocol divides the project into two sovereign territories. You must determine your current territory before executing any file operation.
