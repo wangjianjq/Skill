@@ -1,4 +1,4 @@
-[中文版](#chinese-content) | [English](#english-content)
+[中文版](#中文版) | [English](#english-version)
 
 ---
 
@@ -44,18 +44,18 @@ This is the English description of your project.
   - [动态上下文注入协议 (DCIP)](#动态上下文注入协议-dcip)
   - [Maintenance Tools](#maintenance-tools)
   - [维护工具](#维护工具)
-  - [Memory Guardian](#memory-guardian)
-  - [内存守护](#内存守护-memory-guardian)
+  - [Memory Guardian](#memory-guardian-system-resource-protection)
+  - [内存守护](#内存守护-memory-guardian系统资源保护)
   - [Regulatory Development Constraints](#regulatory-development-constraints)
   - [规则化开发约束](#规则化开发约束)
-  - [Two-Land Doctrine](#two-land-doctrine)
-  - [双域安全法则](#双域安全法则)
-  - [Red Button Rule](#red-button-rule)
-  - [危险动作警告法则](#危险动作警告法则)
-  - [Development Workflow](#lightweight-development-workflow)
-  - [开发工作流](#轻量级开发工作流)
-  - [User Persona](#personalized-user-interview)
-  - [开发者画像](#个性化用户访谈)
+  - [Two-Land Doctrine](#two-land-doctrine-territory-based-access-control)
+  - [双域安全法则](#双域安全法则领地式访问控制)
+  - [Red Button Rule](#red-button-rule-safety-overrides)
+  - [危险动作警告法则](#危险动作警告法则安全覆盖)
+  - [Lightweight Development Workflow](#lightweight-development-workflow)
+  - [轻量级开发工作流](#轻量级开发工作流)
+  - [Personalized User Interview](#personalized-user-interview)
+  - [个性化用户访谈](#个性化用户访谈)
   - [Full-Stack Polyglot QA & Testing](#full-stack-polyglot-qa--testing)
   - [全栈多语言 QA 与测试支持](#全栈多语言-qa-与测试支持)
   - [Professional UI/UX Design Standards](#professional-uiux-design-standards)
@@ -93,7 +93,7 @@ This is the English description of your project.
   - [关于 Vercel Research 的被动上下文](#关于-vercel-research-的被动上下文)
 
 - [Star History](#star-history)
-- [Star 历史](#star-history)
+- [Star 历史](#star-历史)
 
 - [Download](#download)
 - [下载](#下载)
@@ -606,6 +606,12 @@ includes a "Party Mode" for multi-agent collaboration.
 > By using Agents-MD Pro v7.5, developers gain a **secure, standardized,
 > and high-quality** AI collaboration environment, ensuring professional
 > results from prototype to production.
+
+---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=wangjianjq/Skill&type=timeline&legend=top-left)](https://www.star-history.com/#wangjianjq/Skill&type=timeline&legend=top-left)
 
 ---
 
@@ -1124,15 +1130,12 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 > 通过 Agents-MD Pro v7.5，开发者可获得一个**安全、规范、高质量**的
 > AI 协同编码环境，显著提升从原型到交付的全程可控性与专业度。
 
-## Star History
+## Star 历史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=wangjianjq/Skill&type=timeline&legend=top-left)](https://www.star-history.com/#wangjianjq/Skill&type=timeline&legend=top-left)
-
-![Alt](https://repobeats.axiom.co/api/embed/2e645b851a1b534e8e63625edfcf443b8d54e9d2.svg "Repobeats analytics image")
 
 ### 下载
 
 - **[点击下载 Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
 
 [⬆ 返回顶部](#top)
-
