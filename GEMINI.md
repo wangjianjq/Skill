@@ -50,3 +50,10 @@
 | Status | `PROJECT_STATUS.md` |
 | Knowledge Index | `AGENTS_INDEX.yaml` |
 | Memory | `context/memory.md` |
+| Project State | `context/status.md` (auto-generated) |
+
+## 🔄 Context System
+
+- **Status File**: `context/status.md` - Auto-generated project status
+- **Status Generator**: `context/auto_status.py` - Run manually or via Git hooks
+- **Prompt Builder**: `make_prompt.py` - Assembles context for AI (tiered strategy for large projects)

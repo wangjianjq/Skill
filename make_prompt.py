@@ -3,22 +3,57 @@ import datetime
 import sys
 
 # --- 配置 ---
-IGNORE_DIRS = {'.git', '__pycache__', 'node_modules', 'context', '.agents', '.gemini', '.history'} # Added .agents/.gemini to reduce noise if needed, but keeping .agents might be good. Let's stick to user defaults + common ignores
 IGNORE_DIRS = {'.git', '__pycache__', 'node_modules', 'context', '.gemini', '.history'}
 EXTENSIONS = {'.py', '.md', '.json', '.js', '.vue', '.ps1', '.sh', '.txt'}
 
+# --- 项目规模阈值（用于分层策略）---
+MAX_FILES_FULL_TREE = 100      # 小型项目：完整树
+MAX_FILES_TRUNCATED = 300      # 中型项目：截断到 2 层深度
+# 超过 300 文件：仅显示根目录和一级子目录
+
 def get_tree_structure(startpath):
-    """自动生成项目目录树，解决'脑裂'问题，保证AI看到的是真实的文件结构"""
-    tree_str = "Project Structure:\n"
+    """自动生成项目目录树，根据项目规模动态调整深度，避免超长上下文"""
+    
+    # 步骤 1: 快速统计文件数
+    file_count = 0
     for root, dirs, files in os.walk(startpath):
         dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
+        file_count += sum(1 for f in files if any(f.endswith(ext) for ext in EXTENSIONS))
+    
+    # 步骤 2: 根据规模决定深度策略
+    if file_count <= MAX_FILES_FULL_TREE:
+        depth_limit = None  # 完整树
+        strategy = "完整树"
+    elif file_count <= MAX_FILES_TRUNCATED:
+        depth_limit = 2
+        strategy = "2层深度"
+    else:
+        depth_limit = 1
+        strategy = "1层深度（大型项目）"
+    
+    # 步骤 3: 生成树结构
+    tree_str = f"Project Structure (📊 {file_count} 个文件，策略: {strategy}):\n"
+    
+    for root, dirs, files in os.walk(startpath):
+        dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
+        
+        # 计算当前深度
         level = root.replace(startpath, '').count(os.sep)
-        indent = ' ' * 4 * (level)
+        
+        # 应用深度限制
+        if depth_limit is not None and level >= depth_limit:
+            dirs[:] = []  # 不再深入子目录
+            if level > depth_limit:
+                continue
+        
+        indent = ' ' * 4 * level
         tree_str += f"{indent}{os.path.basename(root)}/\n"
+        
         subindent = ' ' * 4 * (level + 1)
         for f in files:
             if any(f.endswith(ext) for ext in EXTENSIONS):
                 tree_str += f"{subindent}{f}\n"
+    
     return tree_str
 
 def read_file(filepath):

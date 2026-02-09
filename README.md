@@ -39,7 +39,9 @@ This is the English description of your project.
   - [🤖 混合智能与 Skills 生态](#🤖-混合智能与-skills-生态-hybrid-intelligence)
   - [🧠 Dynamic Context Injection Protocol (DCIP)](#🧠-dynamic-context-injection-protocol-dcip)
   - [🧠 动态上下文注入协议 (DCIP)](#🧠-动态上下文注入协议-dcip)
-  - [🛡️ Memory Guardian](#🛡️-memory-guardian-system-resource-protection)
+  - [� Maintenance Tools](#🔧-maintenance-tools)
+  - [🔧 维护工具](#🔧-维护工具)
+  - [�🛡️ Memory Guardian](#🛡️-memory-guardian-system-resource-protection)
   - [🛡️ 内存守护](#🛡️-内存守护-memory-guardian系统资源保护)
   - [📐 Regulatory Development Constraints](#📐-regulatory-development-constraints)
   - [📐 规则化开发约束](#📐-规则化开发约束)
@@ -221,6 +223,49 @@ Experimentally solving the "Lost in the Middle" and "Split-Brain" issues in long
 - **Effect**: Ensures AI **never forgets** a past decision and **never hallucinates** a non-existent file.
 
 **Usage**: Run `python make_prompt.py "Your Question"` -> Paste to AI.
+
+### 🔧 Maintenance Tools
+
+#### Project Status Generator (`context/auto_status.py`)
+
+Automatically generates and updates project status information for optimal AI context.
+
+- **Purpose**: Keeps `context/status.md` up-to-date with current project state
+- **Features**:
+  - Auto-detects tech stack (Python, Node.js, Java, etc.)
+  - Calculates project size (file count, lines of code)
+  - Generates directory structure overview
+  - Preserves user-editable sections
+
+**Usage**:
+
+```bash
+# Manual update
+python context/auto_status.py
+
+# Recommended: Set up Git hooks for automatic updates
+# Add to .git/hooks/post-commit:
+python context/auto_status.py
+```
+
+#### Context Builder (`make_prompt.py`)
+
+Assembles comprehensive context for AI tools that don't support automatic context loading.
+
+- **Purpose**: Generate optimized prompts for web-based AI tools (ChatGPT, Claude, etc.)
+- **Features**:
+  - Tiered strategy based on project size (small/medium/large)
+  - Combines memory, status, and user query
+  - Reduces context size by 70-80% for large projects
+
+**Usage**:
+
+```bash
+python make_prompt.py "Your question here"
+# Copy output and paste to AI tool
+```
+
+> **Note**: Gemini CLI users don't need `make_prompt.py` as context is loaded automatically via `AGENTS.md`.
 
 ### 🛡️ Memory Guardian (System Resource Protection)
 
@@ -565,7 +610,8 @@ includes a "Party Mode" for multi-agent collaboration.
 ---
 
 ### 📥 Download
-* **[Download Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
+
+- **[Download Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
 
 <div id="chinese-content"></div>
 
@@ -771,6 +817,49 @@ python .agent/skills/memory-guardian/scripts/cleanup.py
 - **效果**: 确保 AI **永远记得**过去的决策，并且**永远知晓**项目当前的真实结构。
 
 **用法**: 运行 `python make_prompt.py "你的问题"` -> 粘贴给 AI。
+
+### 🔧 维护工具
+
+#### 项目状态生成器 (`context/auto_status.py`)
+
+自动生成和更新项目状态信息，为 AI 提供最优上下文。
+
+- **用途**：保持 `context/status.md` 与当前项目状态同步
+- **功能**：
+  - 自动检测技术栈（Python、Node.js、Java 等）
+  - 统计项目规模（文件数、代码行数）
+  - 生成目录结构概览
+  - 保留用户可编辑区域
+
+**使用方法**：
+
+```bash
+# 手动更新
+python context/auto_status.py
+
+# 推荐：设置 Git hooks 实现自动更新
+# 在 .git/hooks/post-commit 中添加：
+python context/auto_status.py
+```
+
+#### 上下文构建器 (`make_prompt.py`)
+
+为不支持自动上下文加载的 AI 工具生成优化提示。
+
+- **用途**：为网页版 AI 工具（ChatGPT、Claude 等）生成优化提示
+- **功能**：
+  - 基于项目规模的分层策略（小/中/大型）
+  - 组合记忆、状态和用户查询
+  - 大型项目上下文减少 70-80%
+
+**使用方法**：
+
+```bash
+python make_prompt.py "你的问题"
+# 复制输出并粘贴到 AI 工具
+```
+
+> **注意**：Gemini CLI 用户无需使用 `make_prompt.py`，上下文通过 `AGENTS.md` 自动加载。
 
 ### 📐 规则化开发约束
 
@@ -1070,16 +1159,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 [![Star History Chart](https://api.star-history.com/svg?repos=wangjianjq/Skill&type=timeline&legend=top-left)](https://www.star-history.com/#wangjianjq/Skill&type=timeline&legend=top-left)
 
 ### 📥 下载
-* **[点击下载 Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
+
+- **[点击下载 Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
 
 [⬆ 返回顶部](#top)
-
-
-
-
-
-
-
-
-
-
