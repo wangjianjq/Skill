@@ -115,6 +115,7 @@ registry:
     - { name: "I18n Enforcement", path: ".agents/skills/SKILL_I18N.md" }
     - { name: "Architectural Governance", path: ".agents/skills/SKILL_ARCHITECT.md" }
     - { name: "User Onboarding", path: ".agents/skills/SKILL_ONBOARDING.md" }
+    - { name: "God Mode Injection", path: ".agents/skills/GOD_MODE.md", tags: ["god-mode", "global-prompt"] }
 
   knowledge:
     - { name: "HarmonyOS Ecosystem", path: ".agents/knowledge/KNOWLEDGE_HARMONYOS.md", tags: ["harmonyos", "distributed", "har-hsp"] }

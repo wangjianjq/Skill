@@ -14,13 +14,18 @@ MAX_FILES_TRUNCATED = 300      # 中型项目：截断到 2 层深度
 def get_tree_structure(startpath):
     """自动生成项目目录树，根据项目规模动态调整深度，避免超长上下文"""
     
-    # 步骤 1: 快速统计文件数
+    # 单次遍历：同时统计文件数并收集目录结构信息
     file_count = 0
+    entries = []  # (level, basename, is_dir, files_in_dir)
+    
     for root, dirs, files in os.walk(startpath):
         dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
-        file_count += sum(1 for f in files if any(f.endswith(ext) for ext in EXTENSIONS))
+        level = root.replace(startpath, '').count(os.sep)
+        matched_files = [f for f in files if any(f.endswith(ext) for ext in EXTENSIONS)]
+        file_count += len(matched_files)
+        entries.append((level, os.path.basename(root), matched_files))
     
-    # 步骤 2: 根据规模决定深度策略
+    # 根据规模决定深度策略
     if file_count <= MAX_FILES_FULL_TREE:
         depth_limit = None  # 完整树
         strategy = "完整树"
@@ -31,27 +36,19 @@ def get_tree_structure(startpath):
         depth_limit = 1
         strategy = "1层深度（大型项目）"
     
-    # 步骤 3: 生成树结构
+    # 生成树结构（应用深度限制）
     tree_str = f"Project Structure (📊 {file_count} 个文件，策略: {strategy}):\n"
     
-    for root, dirs, files in os.walk(startpath):
-        dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
-        
-        # 计算当前深度
-        level = root.replace(startpath, '').count(os.sep)
-        
-        # 应用深度限制
-        if depth_limit is not None and level >= depth_limit:
-            dirs[:] = []  # 不再深入子目录
-            if level > depth_limit:
-                continue
+    for level, basename, matched_files in entries:
+        if depth_limit is not None and level > depth_limit:
+            continue
         
         indent = ' ' * 4 * level
-        tree_str += f"{indent}{os.path.basename(root)}/\n"
+        tree_str += f"{indent}{basename}/\n"
         
-        subindent = ' ' * 4 * (level + 1)
-        for f in files:
-            if any(f.endswith(ext) for ext in EXTENSIONS):
+        if depth_limit is None or level < depth_limit:
+            subindent = ' ' * 4 * (level + 1)
+            for f in matched_files:
                 tree_str += f"{subindent}{f}\n"
     
     return tree_str

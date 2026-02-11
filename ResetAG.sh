@@ -29,8 +29,15 @@ if [ -f ".ag_env_verified" ]; then
     echo "[OK] Invalidated environment verification"
 fi
 if [ -d ".git" ]; then
-    rm -rf ".git"
-    echo "[OK] Removed .git directory (for clean distribution)"
+    echo ""
+    echo "[WARNING] This will permanently delete the .git directory and all Git history!"
+    read -p "Are you sure? (y/N): " confirm_git
+    if [[ "$confirm_git" =~ ^[Yy]$ ]]; then
+        rm -rf ".git"
+        echo "[OK] Removed .git directory (for clean distribution)"
+    else
+        echo "[SKIP] .git directory preserved."
+    fi
 fi
 
 # 2. Clear project-specific configurations

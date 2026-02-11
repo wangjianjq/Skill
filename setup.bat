@@ -1,5 +1,9 @@
 @echo off
 setlocal
+
+REM Ensure we run from the project root (where this script lives)
+cd /d "%~dp0"
+
 echo [AGENTS-MD] Bootstrapping Environment...
 
 REM Check for uv
@@ -11,7 +15,7 @@ if %ERRORLEVEL% NEQ 0 (
         echo [ERROR] Failed to install uv. Please install manually.
         exit /b 1
     )
-    set "PATH=%USERPROFILE%\.cargo\bin;%PATH%"
+    set "PATH=%USERPROFILE%\.local\bin;%PATH%"
 )
 
 REM Check for Node.js
@@ -39,9 +43,8 @@ if not exist PROJECT_STATUS.md (
     echo   [2] Hybrid     - Balance stability and innovation (Recommended)
     echo   [3] Aggressive - Proactive modernization
     echo.
+    set "mode=2"
     set /p mode="Enter your choice (1/2/3) [Default: 2]: "
-    
-    if "%mode%"=="" set mode=2
     
     if "%mode%"=="1" (
         echo.

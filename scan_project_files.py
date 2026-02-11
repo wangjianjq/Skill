@@ -48,13 +48,22 @@ IGNORE_DIRS = {'.git', '__pycache__', 'node_modules', '.gemini', '.history'}
 
 def matches_pattern(path, pattern):
     """检查路径是否匹配模式"""
+    # 统一使用 / 分隔符
+    normalized = path.replace(os.sep, '/')
+    parts = normalized.split('/')
+    basename = parts[-1] if parts else ''
+    
     if pattern.endswith('/'):
-        return pattern[:-1] in path
+        # 目录模式：检查路径组件中是否有精确匹配的目录名
+        dir_name = pattern[:-1]
+        return dir_name in parts[:-1]  # 只检查目录部分
     elif '*' in pattern:
+        # 通配符模式：只匹配文件扩展名
         ext = pattern.split('*')[-1]
-        return path.endswith(ext) or ext in path
+        return basename.endswith(ext)
     else:
-        return pattern in path
+        # 完整文件名匹配
+        return basename == pattern
 
 def is_temp_file(path):
     """判断是否为临时文件"""
@@ -65,13 +74,16 @@ def is_temp_file(path):
 
 def is_core_file(rel_path):
     """判断是否为核心引导文件"""
-    # 检查完整路径
-    if rel_path in CORE_FILES:
+    # 统一使用 / 分隔符，兼容 Windows
+    normalized = rel_path.replace(os.sep, '/')
+    
+    # 检查完整路径（精确匹配文件名）
+    if normalized in CORE_FILES:
         return True
     
     # 检查是否在核心目录下
     for core in CORE_FILES:
-        if core.endswith('/') and rel_path.startswith(core):
+        if core.endswith('/') and normalized.startswith(core):
             return True
     
     return False

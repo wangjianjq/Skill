@@ -46,7 +46,6 @@ def detect_tech_stack(root_path: str = '.') -> Dict[str, List[str]]:
             for file in Path(root_path).rglob(f'*{pattern}'):
                 if file.is_file():
                     detected[tech_name] = detected.get(tech_name, []) + [str(file)]
-                    break
         else:
             file_path = Path(root_path) / dep_file
             if file_path.exists():
@@ -148,10 +147,24 @@ _可选：记录即将进行的开发任务_"""
         with open(status_file, 'r', encoding='utf-8') as f:
             content = f.read()
             # 提取 "手动维护区域" 部分
-            if '## ✍️ 手动维护区域' in content:
-                start = content.index('## ✍️ 手动维护区域')
-                end = content.index('---', start + 1) if '---' in content[start:] else len(content)
-                manual_section = content[start:end].replace('## ✍️ 手动维护区域', '').strip()
+            marker = '## ✍️ 手动维护区域'
+            if marker in content:
+                start = content.index(marker)
+                # 跳过标题行本身，从下一行开始搜索分隔符
+                after_marker = start + len(marker)
+                # 查找下一个 '---' 分隔符（独占一行）
+                remaining = content[after_marker:]
+                end_offset = None
+                for line_start in range(len(remaining)):
+                    if remaining[line_start:].startswith('---'):
+                        # 确保 '---' 在行首（前一个字符是换行或在开头）
+                        if line_start == 0 or remaining[line_start - 1] == '\n':
+                            end_offset = line_start
+                            break
+                if end_offset is not None:
+                    manual_section = remaining[:end_offset].strip()
+                else:
+                    manual_section = remaining.strip()
                 # 去掉最后的分隔符前的内容
                 if '## 🔄 更新此文件' in manual_section:
                     manual_section = manual_section.split('## 🔄 更新此文件')[0].strip()
@@ -250,7 +263,11 @@ def main():
     script_dir = Path(__file__).parent.parent
     os.chdir(script_dir)
     
-    # 生成内容
+    # 预先计算，避免重复调用
+    tech_stack = detect_tech_stack('.')
+    file_count, line_count = count_project_stats('.')
+    
+    # 生成内容（传入已计算的数据）
     content = generate_status_md('.')
     
     # 写入文件
@@ -260,11 +277,6 @@ def main():
     
     print(f"✅ 状态文件已更新: {output_file}")
     print("\n📋 摘要:")
-    
-    # 显示简要信息
-    tech_stack = detect_tech_stack('.')
-    file_count, line_count = count_project_stats('.')
-    
     print(f"  - 文件数: {file_count}")
     print(f"  - 代码行数: {line_count:,}")
     print(f"  - 检测到技术栈: {', '.join(tech_stack.keys()) if tech_stack else '无'}")

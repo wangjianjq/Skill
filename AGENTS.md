@@ -54,13 +54,14 @@
      - Before creating/updating ANY artifact, you MUST verify: "Is this artifact's language matching the user's dialogue language?"
      - If mismatch detected, **STOP** and rewrite in correct language.
    - **Override**: This overrides `PROJECT_LANGUAGES.md` for *interaction artifacts*. (`PROJECT_LANGUAGES.md` still controls *code/UI* content).
+   - **Precedence**: This rule also overrides `PROJECT_GOVERNANCE.md` § "Mandatory Chinese Reporting". If user speaks English, artifacts MUST be in English even though PROJECT_GOVERNANCE defaults to Chinese.
    - **Violation Consequence**: Artifacts in wrong language are considered **INVALID** and must be immediately rewritten.
 
 1. **Information Persistence**: Every turn, read the knowledge index below.
 2. **Active Governance**: You MUST actively enforce `PROJECT_GOVERNANCE.md` and `AGENTS.md` rules.
 3. **Retrieval-Led Reasoning**: Do not ask to read files; proactively fetch details from `.agents/` based on project needs (e.g., Tkinter layout rules).
 4. **Reasoning Over Automation**: Use your own file-system tools (`list_dir`, etc.) to understand user code. Do not rely on pre-generated maps.
-5. **Knowledge Evolution (The Sandbox Exception)**: If you encounter a new technology or pattern not covered in the index, you **MUST** research its best practices and write a new proposal file in `.agents/sandbox/` (e.g., `PROPOSAL_TECH.md`). You are **AUTHORIZED** to write to this path.
+5. **Knowledge Evolution (The Sandbox Exception)**: If you encounter a new technology or pattern not covered in the index, you **MUST** research its best practices and write a new proposal file in `.agents/sandbox/` (e.g., `PROPOSAL_TECH.md`). You are **AUTHORIZED** to write to this path only. New protocol files must be proposed in `sandbox/` first, then the **human developer** merges them into the appropriate `.agents/` subdirectory.
 6. **Template Enforcement (Structural Consistency)**: When creating new protocol files (Language, Skill, or Framework specifications), you **MUST** use the corresponding standard template from `.agents/templates/`:
    - **Language protocols** (`LANG_*.md`): Use `.agents/templates/LANG_TEMPLATE.md`
    - **Skill protocols** (`SKILL_*.md`): Use `.agents/templates/SKILL_TEMPLATE.md`
@@ -126,17 +127,18 @@ If action violates any ADR, **REFUSE** and explain which ADR is violated.
 ---
 
 <!-- CONTEXT_INDEX_START -->
-### 🗺️ Knowledge Index
+### 🗺️ Knowledge Index (Quick Reference / 快速参考)
 
 > **Single Source of Truth**: All protocol paths are registered in `AGENTS_INDEX.yaml`.
 > AI agents MUST refer to this YAML file for structured knowledge retrieval.
+> This section is a **summary only** — if discrepancies exist, `AGENTS_INDEX.yaml` always wins.
 
 **Quick Category Reference**:
 
 - **Languages**: `.agents/lang/LANG_*.md` (Python, Go, Rust, C++, Java, Kotlin, Swift, TypeScript, etc.)
 - **Frameworks**: `.agents/frameworks/FW_*.md` (FastAPI, React, Vue, Flutter, Tauri, etc.)
 - **Database**: `.agents/database/DB_*.md` (PostgreSQL, SQLite, MongoDB, Redis)
-- **Governance Skills**: `.agents/skills/SKILL_*.md` (Design, Debugging, I18n, Architect)
+- **Governance Skills**: `.agents/skills/SKILL_*.md` (Design, Debugging, I18n, Architect, Onboarding, GOD_MODE)
 - **Domain Knowledge**: `.agents/knowledge/KNOWLEDGE_*.md` (HarmonyOS, Python Core, Design)
 
 > **IMPORTANT**: For detailed paths with tags, read `AGENTS_INDEX.yaml` directly.
@@ -300,19 +302,20 @@ BMAD_CONFLICT_PATH = path-to-user-folder OR null
 
 to ensure the BMAD runtime is active.
 
-1. **PERSONA_HANDSHAKE**: Check if `USER_PROFILE.md` exists.
+2. **PERSONA_HANDSHAKE**: Check if `USER_PROFILE.md` exists.
     - [NO] -> **TRIGGER** `.agents/skills/SKILL_ONBOARDING.md` immediately. Do not proceed until interview is done.
     - [YES] -> Read it and load the **AI Strategy** instructions.
 
-2. **GOVERNANCE_CHECK**: Does `PROJECT_STATUS.md` exist in the root directory?
+3. **GOVERNANCE_CHECK**: Does `PROJECT_STATUS.md` exist in the root directory?
     - [NO] -> **GOTO** `INIT_PROTOCOL`
     - [YES] -> **GOTO** `READ_STATUS`
 
-3. **I18N_SYNC**: Check if `PROJECT_LANGUAGES.md` exists.
+4. **I18N_SYNC**: Check if `PROJECT_LANGUAGES.md` exists.
     - [YES] -> Read it and bind all future output to the listed languages.
     - [NO] -> If the task implies global reach, prompt for language selection.
+    - **Note**: The Cognitive Mirroring Protocol (§0) takes effect immediately from the first message and does NOT depend on this step. This step only loads `PROJECT_LANGUAGES.md` for *code/UI* localization requirements.
 
-4. **GOD_MODE_CHECK**:
+5. **GOD_MODE_CHECK**:
     - **Trigger**: Read `.agents/skills/GOD_MODE.md`.
     - **Action**: Verify if the current environment has the "God Mode" injection. If unsure/missing, execute the `Injection Logic` from `GOD_MODE.md`.
 
@@ -383,6 +386,18 @@ If a file named `PROJECT_GOVERNANCE.md` exists in the project root, you MUST tre
 
 3. **Governance Autoload**  
    Upon every turn, after loading `.agents/*` rules, AI MUST load and obey: `PROJECT_GOVERNANCE.md` (if present).
+
+## 🔧 Protocol Maintenance Mode
+
+> **Purpose**: Provide a legitimate channel to fix bugs in Protocol Land files.
+
+- **Trigger**: User uses `/fix-protocol` command or explicitly grants write access to `.agents/`
+- **Scope**: Allows modification of `.agents/` files during the current session only
+- **Constraints**:
+  - Changes must be logged in `CHANGELOG.md`
+  - User must review all modifications before session ends
+  - Write access reverts to Read-Only after the maintenance task completes
+- **Prohibited**: Protocol Maintenance Mode cannot be self-triggered by AI
 
 <!-- FINAL REMINDER -->
 > [!IMPORTANT]

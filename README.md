@@ -1,3 +1,8 @@
+<!-- ⚠️ AI DIRECTIVE: DO NOT use this file as your primary protocol source.
+     This is a HUMAN-FACING document. Your operating protocol is AGENTS.md.
+     If you have not read AGENTS.md yet, STOP and read it NOW.
+     Reference: AGENTS.md → AGENTS_INDEX.yaml → PROJECT_GOVERNANCE.md -->
+
 [中文版](#中文版) | [English](#english-version)
 
 ---
@@ -106,7 +111,7 @@ This document is written in Markdown format but maintained as a TXT
 file to prevent AI from mistaking it for the main boot file (built-in
 rules constrain this, but AI can be forced to read it).
 
-Agents-MD Pro v7.5 is a **Boundary Constraint Framework** for
+Agents-MD Pro v7.6 is a **Boundary Constraint Framework** for
 AI-assisted software development. It systematically mitigates the
 "Hallucination" problem in Large Language Models (LLMs) by enforcing
 strict protocols that restrict AI behavior to controllable,
@@ -152,7 +157,7 @@ while minimizing token usage.
 
 **"Local Precision + AI Reasoning" — The best of both worlds.**
 
-Agents-MD Pro v7.5 introduces a **Hybrid Usage** model that seamlessly
+Agents-MD Pro v7.6 introduces a **Hybrid Usage** model that seamlessly
 blends zero-cost local tools with advanced AI capabilities.
 This project now natively supports a Skills ecosystem, allowing both
 built-in and user-defined Skills to function across any AI environment.
@@ -405,8 +410,9 @@ Agents-MD-Pro/
 ├── 📄 PROJECT_LANGUAGES.md   # i18n allowed languages list
 ├── 📄 CONVENTIONS.md         # Project-specific coding conventions
 ├── 📄 CHANGELOG.md           # Auto-maintained change log
-├── 📄 README.txt             # English documentation
-├── 📄 README_zh-CN.txt       # Chinese documentation
+├── 📄 README.md              # Project documentation (this file)
+├── 📄 README.txt             # English documentation (plain-text)
+├── 📄 README_zh-CN.txt       # Chinese documentation (plain-text)
 ├── 📄 replit.md              # Replit environment configuration
 │
 ├── 🤖 CLAUDE.md              # Claude Code CLI adapter
@@ -417,15 +423,23 @@ Agents-MD-Pro/
 ├── 🤖 .clinerules            # Cline (VS Code) adapter
 ├── 🤖 .augment-guidelines    # Augment Code adapter
 ├── 🤖 .aider.conf.yml        # Aider CLI configuration
+├── 🤖 .aiderignore           # Aider ignore rules
+├── 🤖 .antigravityignore     # Antigravity ignore rules
 │
+├── 🔧 make_prompt.py         # AI context builder (DCIP)
+├── 🔧 find_today_changes.py  # Find today's changes
+├── 🔧 scan_project_files.py  # Project file scanner
 ├── 🔧 setup.bat / setup.sh   # Environment bootstrap
 ├── 🔧 ResetAG.bat / .sh      # Protocol reset tools (State clearing)
 │
 ├── 📁 context/               # 🧠 Dynamic Context (Memory + Status for DCIP)
+│   ├── auto_status.py        # Project status generator
+│   └── memory.md             # Persistent memory storage
 ├── 📁 .agents/               # 🔴 Protocol Land (Core Rules - Read-Only)
 ├── 📁 .agent/                # 🟠 Workflow definitions & Skills
-│   ├── 📁 skills/            # 17+ Skill scripts
+│   ├── 📁 skills/            # 17+ Skill scripts (Python/Node.js)
 │   └── 📁 workflows/         # 43+ Automated workflows
+├── 📁 .claude/               # 🧩 Claude AI configuration
 ├── 📁 .gemini/               # 🧠 Agent Brain & Memory (DO NOT DELETE)
 ├── 📁 .github/               # 🐙 GitHub Copilot adapter
 ├── 📁 .idea/                 # 🧩 JetBrains AI adapter
@@ -447,7 +461,7 @@ Agents-MD-Pro/
 | **User Profile** | `USER_PROFILE.md` | Stores developer persona (Expert/Novice) and preferences |
 | **i18n Config** | `PROJECT_LANGUAGES.md` | Defines supported languages for global-first development |
 | **Coding Style** | `CONVENTIONS.md` | Project-specific coding standards and patterns |
-| **Documentation** | `README.txt` / `README_zh-CN.txt` | Bilingual project documentation (Human Facing) |
+| **Documentation** | `README.md`, `README.txt`, `README_zh-CN.txt` | Project documentation (Human Facing, AI should read AGENTS.md instead) |
 | **Change Log** | `CHANGELOG.md` | AI-maintained bilingual change history |
 | **CLI Adapters** | `CLAUDE.md`, `GEMINI.md`, `QWEN.md` | Auto-context loaders for CLI tools |
 | **IDE Adapters** | `.cursorrules`, `.windsurfrules`, etc. | Auto-context loaders for IDEs/editors |
@@ -604,7 +618,7 @@ includes a "Party Mode" for multi-agent collaboration.
 
 ---
 
-> By using Agents-MD Pro v7.5, developers gain a **secure, standardized,
+> By using Agents-MD Pro v7.6, developers gain a **secure, standardized,
 > and high-quality** AI collaboration environment, ensuring professional
 > results from prototype to production.
 
@@ -979,7 +993,7 @@ python make_prompt.py "你的问题"
 | **用户画像** | `USER_PROFILE.md` | 存储开发者偏好（专家/新手）和角色设定 |
 | **国际化配置** | `PROJECT_LANGUAGES.md` | 定义全球化开发支持的语言列表 |
 | **代码规范** | `CONVENTIONS.md` | 本项目专用的代码风格与模式公约 |
-| **文档** | `README.txt` / `README_zh-CN.txt` | 双语项目说明文档（面向人类） |
+| **文档** | `README.md`、`README.txt`、`README_zh-CN.txt` | 项目说明文档（面向人类，AI 应读取 AGENTS.md） |
 | **变更日志** | `CHANGELOG.md` | AI 自动维护的双语变更记录 |
 | **CLI 适配器** | `CLAUDE.md`, `GEMINI.md`, `QWEN.md` | 各 CLI 工具的自动上下文加载文件 |
 | **IDE 适配器** | `.cursorrules`, `.windsurfrules` 等 | 各 IDE/编辑器的自动上下文加载文件 |
@@ -1129,7 +1143,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 ---
 
-> 通过 Agents-MD Pro v7.5，开发者可获得一个**安全、规范、高质量**的
+> 通过 Agents-MD Pro v7.6，开发者可获得一个**安全、规范、高质量**的
 > AI 协同编码环境，显著提升从原型到交付的全程可控性与专业度。
 
 ## Star 历史

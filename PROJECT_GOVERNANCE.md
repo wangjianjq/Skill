@@ -158,6 +158,8 @@ The AI must follow these rules when auto-maintaining CHANGELOG:
 
 - **Reason**: User preference and project standard.
 - **Exceptions**: Technical terms, code snippets, or direct quotes from English docs.
+- **Override**: This rule is **subordinate** to AGENTS.md § "Cognitive Mirroring Protocol". If the user communicates in a language other than Chinese, that language takes precedence per AGENTS.md §0.
+- **覆盖说明**: 此规则**从属于** AGENTS.md § "认知镜像协议"。如用户以非中文交流，以用户语言为准。
 
 ---
 
@@ -230,8 +232,9 @@ Proceed? / 继续？"
 
 **Step 3**: 例外读取 README / Exception read of README
 
-- Read `README.txt` (English version)
-- Read `README_zh-CN.txt` (Chinese version)
+- Read `README.md` (Primary GitHub-rendered document / GitHub 主显示文档)
+- Read `README.txt` (English plain-text version)
+- Read `README_zh-CN.txt` (Chinese plain-text version)
 - **Critical**: This is the ONLY permitted README read
 
 **Step 4**: 生成差异报告 / Generate diff report
@@ -285,8 +288,8 @@ Approve all changes? (Y/N) / 批准所有变更？（是/否）
 
 ### 强制要求（Mandatory Requirements）
 
-1. **同步双文件**：`README.txt` 和 `README_zh-CN.txt` 必须同时更新  
-   **Sync both files**: Both `README.txt` and `README_zh-CN.txt` must be updated together
+1. **同步所有 README 文件**：`README.md`、`README.txt` 和 `README_zh-CN.txt` 必须同时更新  
+   **Sync all README files**: `README.md`, `README.txt`, and `README_zh-CN.txt` must be updated together
 
 2. **语义一致**：中英文描述必须语义完全一致  
    **Semantic consistency**: Chinese and English descriptions must match exactly

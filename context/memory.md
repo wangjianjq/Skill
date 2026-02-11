@@ -1,5 +1,13 @@
 # 决策记忆库 (TOC)
 
+## Schema: Memory Configuration
+
+- document_type: architectural_decision_records
+- target_audience: ai_agents
+- enforcement_level: mandatory
+- read_frequency: every_session_start
+- scope: long_term_memory
+
 1. [ADR-001] 架构转型: 混合智能
 2. [ADR-002] 安全审计: 禁用 Eval
 3. [ADR-003] 语言协议: 认知镜像

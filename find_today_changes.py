@@ -81,10 +81,16 @@ def main():
     for f in files:
         print(f"{f['mtime']:<20} {format_size(f['size']):<12} {f['path']}")
         
-        # 简单判断：如果是我们新增的目录，标记为新文件
-        if 'context' in f['path'] or '_shared' in f['path']:
-            new_files.append(f['path'])
-        else:
+        # 通过创建时间与修改时间判断：如果创建时间也是今天，则为新增文件
+        file_path = os.path.join('.', f['path'])
+        try:
+            ctime = os.path.getctime(file_path)
+            ctime_date = datetime.fromtimestamp(ctime).date()
+            if ctime_date == date.today():
+                new_files.append(f['path'])
+            else:
+                modified_files.append(f['path'])
+        except (OSError, PermissionError):
             modified_files.append(f['path'])
     
     print("-" * 80)

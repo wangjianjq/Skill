@@ -29,8 +29,15 @@ if exist .ag_env_verified (
     echo [OK] Invalidated environment verification
 )
 if exist .git (
-    rmdir /s /q .git
-    echo [OK] Removed .git directory (for clean distribution)
+    echo.
+    echo [WARNING] This will permanently delete the .git directory and all Git history!
+    set /p confirm_git="Are you sure? (y/N): "
+    if /i "%confirm_git%"=="y" (
+        rmdir /s /q .git
+        echo [OK] Removed .git directory (for clean distribution)
+    ) else (
+        echo [SKIP] .git directory preserved.
+    )
 )
 
 :: 2. Clear project-specific configurations

@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 def main():
-    readme_path = Path('c:/Users/WJ/Desktop/Skill/README.md')
+    readme_path = Path(__file__).parent / 'README.md'
     content = readme_path.read_text(encoding='utf-8')
     lines = content.split('\n')
     
@@ -109,8 +109,27 @@ def main():
     
     # 7. 结构对称性
     print('7️⃣ 中英文结构对称性')
-    en_h2 = len(re.findall(r'^## [^#]', content[:len(content)//2], re.MULTILINE))
-    cn_h2 = len(re.findall(r'^## [^#]', content[len(content)//2:], re.MULTILINE))
+    # 基于中文版本标题标记来定位分割点，而非简单的字符数对半分
+    cn_marker_match = re.search(r'^#\s+.*[\u4e00-\u9fff]', content, re.MULTILINE)
+    # 查找第一个包含中文的一级标题作为中文部分起点
+    cn_section_start = None
+    for m in re.finditer(r'^(#{1,2})\s+(.+)$', content, re.MULTILINE):
+        title = m.group(2)
+        # 检测标题是否主要为中文
+        cn_chars = len(re.findall(r'[\u4e00-\u9fff]', title))
+        if cn_chars >= 2 and m.group(1) == '#':
+            cn_section_start = m.start()
+            break
+    
+    if cn_section_start:
+        en_part = content[:cn_section_start]
+        cn_part = content[cn_section_start:]
+        en_h2 = len(re.findall(r'^## [^#]', en_part, re.MULTILINE))
+        cn_h2 = len(re.findall(r'^## [^#]', cn_part, re.MULTILINE))
+    else:
+        # 如果找不到中文标记，回退到对半分（并提示）
+        en_h2 = len(re.findall(r'^## [^#]', content[:len(content)//2], re.MULTILINE))
+        cn_h2 = len(re.findall(r'^## [^#]', content[len(content)//2:], re.MULTILINE))
     print(f'   英文主章节数: {en_h2}')
     print(f'   中文主章节数: {cn_h2}')
     if abs(en_h2 - cn_h2) <= 2:

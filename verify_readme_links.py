@@ -79,15 +79,16 @@ def verify_readme_links(readme_path, output_file=None):
     
     # 显示前10个有效链接作为示例
     if valid_links:
-        output("\\n[SAMPLE] 有效链接示例 (前10个):")
+        output("\n[SAMPLE] 有效链接示例 (前10个):")
         for i, (text, anchor, title) in enumerate(valid_links[:10], 1):
             output(f"  {i}. [{text}](#{anchor}) -> {title}")
     
     return len(invalid_links) == 0
 
 if __name__ == "__main__":
-    readme_path = Path(r"c:\Users\WJ\Desktop\Skill\README.md")
-    output_path = Path(r"c:\Users\WJ\Desktop\Skill\link_verification_report.txt")
+    project_root = Path(__file__).parent
+    readme_path = project_root / 'README.md'
+    output_path = project_root / 'link_verification_report.txt'
     
     if not readme_path.exists():
         print(f"文件不存在: {readme_path}")

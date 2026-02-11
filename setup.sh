@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ensure we run from the project root (where this script lives)
+cd "$(dirname "$0")"
+
 echo "[AGENTS-MD] Bootstrapping Environment..."
 
 # Check for uv
@@ -12,9 +15,10 @@ if ! command -v uv &> /dev/null; then
         exit 1
     fi
     
-    # Source the env to get uv in path immediately if possible, 
-    # though usually requires shell restart or sourcing .cargo/env
-    if [ -f "$HOME/.cargo/env" ]; then
+    # Source the env to get uv in path immediately
+    if [ -f "$HOME/.local/bin/uv" ]; then
+        export PATH="$HOME/.local/bin:$PATH"
+    elif [ -f "$HOME/.cargo/env" ]; then
         source "$HOME/.cargo/env"
     fi
 fi
@@ -29,52 +33,7 @@ fi
 
 touch .ag_env_verified
 
-# Check for PROJECT_STATUS.md
-if [ ! -f "PROJECT_STATUS.md" ]; then
-    echo ""
-    echo "========================================================"
-    echo "[AGENTS-MD] First-time setup detected."
-    echo "========================================================"
-    echo ""
-    echo "Please select a Governance Mode:"
-    echo ""
-    echo "  [1] Frozen     - Strict version control, no upgrades"
-    echo "  [2] Hybrid     - Balance stability and innovation (Recommended)"
-    echo "  [3] Aggressive - Proactive modernization"
-    echo ""
-    read -p "Enter your choice (1/2/3) [Default: 2]: " mode
-    
-    # Default to 2 if empty
-    mode=${mode:-2}
-    
-    case $mode in
-        1)
-            echo ""
-            echo "[AGENTS-MD] Creating PROJECT_STATUS.md with Frozen mode..."
-            create_status "Frozen"
-            ;;
-        2)
-            echo ""
-            echo "[AGENTS-MD] Creating PROJECT_STATUS.md with Hybrid mode..."
-            create_status "Hybrid"
-            ;;
-        3)
-            echo ""
-            echo "[AGENTS-MD] Creating PROJECT_STATUS.md with Aggressive mode..."
-            create_status "Aggressive"
-            ;;
-        *)
-            echo ""
-            echo "[WARNING] Invalid choice. Defaulting to Hybrid mode..."
-            create_status "Hybrid"
-            ;;
-    esac
-    echo ""
-fi
-
-echo "[AGENTS-MD] Setup Complete. Agent Environment is ready for Passive Context."
-
-# Function to create PROJECT_STATUS.md
+# Function to create PROJECT_STATUS.md (must be defined before use)
 create_status() {
     local mode=$1
     local current_date=$(date +%Y-%m-%d)
@@ -120,4 +79,49 @@ EOF
     
     echo "[OK] PROJECT_STATUS.md created with $mode mode"
 }
+
+# Check for PROJECT_STATUS.md
+if [ ! -f "PROJECT_STATUS.md" ]; then
+    echo ""
+    echo "========================================================"
+    echo "[AGENTS-MD] First-time setup detected."
+    echo "========================================================"
+    echo ""
+    echo "Please select a Governance Mode:"
+    echo ""
+    echo "  [1] Frozen     - Strict version control, no upgrades"
+    echo "  [2] Hybrid     - Balance stability and innovation (Recommended)"
+    echo "  [3] Aggressive - Proactive modernization"
+    echo ""
+    read -p "Enter your choice (1/2/3) [Default: 2]: " mode
+    
+    # Default to 2 if empty
+    mode=${mode:-2}
+    
+    case $mode in
+        1)
+            echo ""
+            echo "[AGENTS-MD] Creating PROJECT_STATUS.md with Frozen mode..."
+            create_status "Frozen"
+            ;;
+        2)
+            echo ""
+            echo "[AGENTS-MD] Creating PROJECT_STATUS.md with Hybrid mode..."
+            create_status "Hybrid"
+            ;;
+        3)
+            echo ""
+            echo "[AGENTS-MD] Creating PROJECT_STATUS.md with Aggressive mode..."
+            create_status "Aggressive"
+            ;;
+        *)
+            echo ""
+            echo "[WARNING] Invalid choice. Defaulting to Hybrid mode..."
+            create_status "Hybrid"
+            ;;
+    esac
+    echo ""
+fi
+
+echo "[AGENTS-MD] Setup Complete. Agent Environment is ready for Passive Context."
 

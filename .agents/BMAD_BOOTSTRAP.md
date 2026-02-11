@@ -79,6 +79,13 @@ Before attempting installation, you **MUST** verify the Node.js environment.
 5. **Finalize**:
    - Set `ACTIVE_BMAD_PATH = "_bmad/"`
 
+> [!WARNING]
+> **Failure Recovery**: If any step (2-4) fails mid-way, you MUST restore the user's original folder:
+> - Windows: `if exist bmad_temp_hold (ren bmad_temp_hold bmad)`
+> - Linux/Mac: `[ -d bmad_temp_hold ] && mv bmad_temp_hold bmad`
+> 
+> Always verify `bmad_temp_hold` does not remain after completion.
+
 ---
 
 ## 3. Persistent Load Strategy
