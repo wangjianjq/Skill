@@ -38,7 +38,7 @@ CORE_FILES = {
     'context/', 'make_prompt.py',
     
     # Skills 核心
-    '.agent/skills/',
+    '.agents/skills/',
     
     # 工具脚本
     'setup.bat', 'setup.sh', 'ResetAG.bat', 'ResetAG.sh',
