@@ -1147,13 +1147,14 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 ## 🌟 Skill 仓库星标趋势（自动更新）
 
-[wangjianjq/Skill 星标趋势](https://ossinsight.io/api/v1/repos/https://github.com/wangjianjq/Skill/stats/star-trend?type=line&width=800&height=400)
 
-### 下载
+![Stars History](https://ossinsight.io/analyze/wangjianjq/Skill/stars.svg)
+
 
 - **[点击下载 Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
 
 [⬆ 返回顶部](#top)
+
 
 
 
