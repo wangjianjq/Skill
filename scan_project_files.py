@@ -4,7 +4,6 @@
 """
 
 import os
-from pathlib import Path
 
 # 临时文件模式
 TEMP_PATTERNS = {
@@ -38,7 +37,7 @@ CORE_FILES = {
     'context/', 'make_prompt.py',
     
     # Skills 核心
-    '.agent/skills/',
+    '.agents/skills/',
     
     # 工具脚本
     'setup.bat', 'setup.sh', 'ResetAG.bat', 'ResetAG.sh',
@@ -54,8 +53,11 @@ def matches_pattern(path, pattern):
     basename = parts[-1] if parts else ''
     
     if pattern.endswith('/'):
-        # 目录模式：检查路径组件中是否有精确匹配的目录名
+        # 目录模式：支持精确目录名与通配符目录名
         dir_name = pattern[:-1]
+        if '*' in dir_name:
+            suffix = dir_name.split('*')[-1]
+            return any(part.endswith(suffix) for part in parts[:-1])
         return dir_name in parts[:-1]  # 只检查目录部分
     elif '*' in pattern:
         # 通配符模式：只匹配文件扩展名
@@ -104,16 +106,19 @@ def scan_project(root_path='.'):
             try:
                 size = os.path.getsize(file_path)
                 
+                is_temp = is_temp_file(rel_path)
+                is_core = is_core_file(rel_path)
+
                 all_files.append({
                     'path': rel_path,
                     'size': size,
-                    'is_temp': is_temp_file(rel_path),
-                    'is_core': is_core_file(rel_path)
+                    'is_temp': is_temp,
+                    'is_core': is_core
                 })
-                
-                if is_temp_file(rel_path):
+
+                if is_temp:
                     temp_files.append({'path': rel_path, 'size': size})
-                elif not is_core_file(rel_path):
+                elif not is_core:
                     non_core_files.append({'path': rel_path, 'size': size})
                     
             except (OSError, PermissionError):
