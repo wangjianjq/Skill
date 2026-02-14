@@ -1,0 +1,132 @@
+version: "8.0.0"
+philosophy: "Passive Context"
+territory_map:
+  protocol_land: ".agents/"
+  user_land: "root"
+
+# Master Registry of Protocols (Relative Paths)
+registry:
+  context:
+    - name: "BMAD Bootstrap"
+      path: ".agents/BMAD_BOOTSTRAP.md"
+      description: "BMAD Method Automatic Bootstrap Logic"
+    - name: "Project Status"
+      path: "PROJECT_STATUS.md"
+      description: "Governance mode and stack detection"
+    - name: "Sandbox"
+      path: "sandbox/"
+      description: "AI protocol drafting area and proposal zone"
+
+
+  languages:
+    - { name: "ArkTS", path: ".agents/lang/LANG_ARKTS.md", tags: ["harmonyos", "arkts"] }
+    - { name: "C", path: ".agents/lang/LANG_C.md", tags: ["embedded-c"] }
+    - { name: "C++", path: ".agents/lang/LANG_CPP.md", tags: ["modern-cpp"] }
+    - { name: "C#", path: ".agents/lang/LANG_CSHARP.md", tags: ["csharp-modern"] }
+    - { name: "Go", path: ".agents/lang/LANG_GO.md", tags: ["go-lang"] }
+    - { name: "Java", path: ".agents/lang/LANG_JAVA.md", tags: ["java-backend"] }
+    - { name: "Kotlin", path: ".agents/lang/LANG_KOTLIN.md", tags: ["kotlin-android"] }
+    - { name: "Node.js", path: ".agents/lang/LANG_NODEJS.md", tags: ["nodejs-ts"] }
+    - { name: "Python", path: ".agents/lang/LANG_PYTHON.md", tags: ["modern-python"] }
+    - { name: "Rust", path: ".agents/lang/LANG_RUST.md", tags: ["rust-proposal"] }
+    - { name: "Swift", path: ".agents/lang/LANG_SWIFT.md", tags: ["swift-ios"] }
+    - { name: "Zig", path: ".agents/lang/LANG_ZIG.md", tags: ["zig-lang"] }
+
+  frameworks:
+    - { name: "Actix", path: ".agents/frameworks/FW_ACTIX.md" }
+    - { name: "Adonis", path: ".agents/frameworks/FW_ADONIS.md" }
+    - { name: "Alpine", path: ".agents/frameworks/FW_ALPINE.md" }
+    - { name: "Angular", path: ".agents/frameworks/FW_ANGULAR.md" }
+    - { name: "Arduino", path: ".agents/frameworks/FW_ARDUINO.md" }
+    - { name: "ArkUI", path: ".agents/frameworks/FW_ARKUI.md", tags: ["harmonyos", "declarative-ui"] }
+    - { name: "Astro", path: ".agents/frameworks/FW_ASTRO.md" }
+    - { name: "Axum", path: ".agents/frameworks/FW_AXUM.md" }
+    - { name: "Chi", path: ".agents/frameworks/FW_CHI.md" }
+    - { name: "Django", path: ".agents/frameworks/FW_DJANGO.md" }
+    - { name: "Dotnet Core", path: ".agents/frameworks/FW_DOTNET_CORE.md" }
+    - { name: "Echo", path: ".agents/frameworks/FW_ECHO.md" }
+    - { name: "Electron", path: ".agents/frameworks/FW_ELECTRON.md" }
+    - { name: "ESP-IDF", path: ".agents/frameworks/FW_ESP_IDF.md" }
+    - { name: "Express", path: ".agents/frameworks/FW_EXPRESS.md" }
+    - { name: "FastAPI", path: ".agents/frameworks/FW_FASTAPI.md" }
+    - { name: "Fastify", path: ".agents/frameworks/FW_FASTIFY.md" }
+    - { name: "Fiber", path: ".agents/frameworks/FW_FIBER.md" }
+    - { name: "Flask", path: ".agents/frameworks/FW_FLASK.md" }
+    - { name: "Flutter", path: ".agents/frameworks/FW_FLUTTER.md" }
+    - { name: "FreeRTOS", path: ".agents/frameworks/FW_FREERTOS.md" }
+    - { name: "Gatsby", path: ".agents/frameworks/FW_GATSBY.md" }
+    - { name: "Gin", path: ".agents/frameworks/FW_GIN.md" }
+    - { name: "Hono", path: ".agents/frameworks/FW_HONO.md" }
+    - { name: "Hyperf", path: ".agents/frameworks/FW_HYPERF.md" }
+    - { name: "Koa", path: ".agents/frameworks/FW_KOA.md" }
+    - { name: "Ktor", path: ".agents/frameworks/FW_KTOR.md" }
+    - { name: "Laravel", path: ".agents/frameworks/FW_LARAVEL.md" }
+    - { name: "Litestar", path: ".agents/frameworks/FW_LITESTAR.md" }
+    - { name: "Meteor", path: ".agents/frameworks/FW_METEOR.md" }
+    - { name: "NestJS", path: ".agents/frameworks/FW_NESTJS.md" }
+    - { name: "NextJS", path: ".agents/frameworks/FW_NEXTJS.md" }
+    - { name: "Nuxt", path: ".agents/frameworks/FW_NUXT.md" }
+    - { name: "Phoenix", path: ".agents/frameworks/FW_PHOENIX.md" }
+    - { name: "Poem", path: ".agents/frameworks/FW_POEM.md" }
+    - { name: "PySide6", path: ".agents/frameworks/FW_PYSIDE6.md", tags: ["python", "qt6", "desktop", "gui"] }
+    - { name: "PyQt6", path: ".agents/frameworks/FW_PYQT6.md", tags: ["python", "qt6", "desktop", "gui"] }
+    - { name: "Quarkus", path: ".agents/frameworks/FW_QUARKUS.md" }
+    - { name: "Qwik", path: ".agents/frameworks/FW_QWIK.md" }
+    - { name: "Rails", path: ".agents/frameworks/FW_RAILS.md" }
+    - { name: "React Native", path: ".agents/frameworks/FW_REACT_NATIVE.md" }
+    - { name: "React Vite", path: ".agents/frameworks/FW_REACT_VITE.md" }
+    - { name: "Remix", path: ".agents/frameworks/FW_REMIX.md" }
+    - { name: "Rocket", path: ".agents/frameworks/FW_ROCKET.md" }
+    - { name: "Sanic", path: ".agents/frameworks/FW_SANIC.md" }
+    - { name: "Sinatra", path: ".agents/frameworks/FW_SINATRA.md" }
+    - { name: "Slim", path: ".agents/frameworks/FW_SLIM.md" }
+    - { name: "SolidStart", path: ".agents/frameworks/FW_SOLIDSTART.md" }
+    - { name: "Spring", path: ".agents/frameworks/FW_SPRING.md" }
+    - { name: "SvelteKit", path: ".agents/frameworks/FW_SVELTEKIT.md" }
+    - { name: "Symfony", path: ".agents/frameworks/FW_SYMFONY.md" }
+    - { name: "Tauri", path: ".agents/frameworks/FW_TAURI.md" }
+    - { name: "Vapor", path: ".agents/frameworks/FW_VAPOR.md" }
+    - { name: "Vue Vite", path: ".agents/frameworks/FW_VUE_VITE.md" }
+    - { name: "WeChat Mini Program", path: ".agents/frameworks/FW_WECHAT_MINIPROGRAM.md", tags: ["wechat", "miniprogram", "skyline"] }
+    - { name: "Zephyr RTOS", path: ".agents/frameworks/FW_ZEPHYR.md" }
+    - { name: "Tkinter", path: ".agents/frameworks/FW_TKINTER.md", tags: ["python", "gui", "desktop"] }
+
+  database:
+    - { name: "MongoDB", path: ".agents/database/DB_MONGODB.md" }
+    - { name: "MySQL", path: ".agents/database/DB_MYSQL.md" }
+    - { name: "PostgreSQL", path: ".agents/database/DB_POSTGRES.md" }
+    - { name: "Redis", path: ".agents/database/DB_REDIS.md" }
+    - { name: "SQLite", path: ".agents/database/DB_SQLITE.md" }
+
+  skills:
+    - { name: "MCP Scripts", path: ".agents/skills/mcp-scripts/SKILL.md" }
+    - { name: "BLE Debug", path: ".agents/skills/ble-debug/SKILL.md" }
+    - { name: "Anritsu MT8821", path: ".agents/skills/instrument-anritsu-mt8821/SKILL.md" }
+    - { name: "CMW500", path: ".agents/skills/instrument-cmw500/SKILL.md" }
+    - { name: "Digital Multimeter", path: ".agents/skills/instrument-dmm/SKILL.md" }
+    - { name: "J-Link", path: ".agents/skills/instrument-jlink/SKILL.md" }
+    - { name: "Keysight UXM", path: ".agents/skills/instrument-keysight-uxm/SKILL.md" }
+    - { name: "Power Supply", path: ".agents/skills/instrument-power-supply/SKILL.md" }
+    - { name: "Saleae Logic", path: ".agents/skills/instrument-saleae-logic/SKILL.md" }
+    - { name: "Tektronix Scope", path: ".agents/skills/instrument-tektronix-scope/SKILL.md" }
+    - { name: "LoRa SDR", path: ".agents/skills/lora-debug/SKILL.md" }
+    - { name: "Register Access", path: ".agents/skills/register-debug/SKILL.md" }
+    - { name: "Serial/UART", path: ".agents/skills/serial-debug/SKILL.md" }
+    - { name: "USB/HID", path: ".agents/skills/usb-debug/SKILL.md" }
+    - { name: "Debugging & Testing", path: ".agents/skills/debugging/SKILL.md" }
+    - { name: "UI/UX Design", path: ".agents/skills/design/SKILL.md" }
+    - { name: "I18n Enforcement", path: ".agents/skills/i18n/SKILL.md" }
+    - { name: "Architectural Governance", path: ".agents/skills/architect/SKILL.md" }
+    - { name: "User Onboarding", path: ".agents/skills/user-onboarding/SKILL.md" }
+    - { name: "God Mode Injection", path: ".agents/skills/god-mode/SKILL.md", tags: ["god-mode", "global-prompt"] }
+
+  knowledge:
+    - { name: "HarmonyOS Ecosystem", path: ".agents/knowledge/KNOWLEDGE_HARMONYOS.md", tags: ["harmonyos", "distributed", "har-hsp"] }
+    - { name: "Python Core", path: ".agents/knowledge/KNOWLEDGE_PYTHON.md" }
+    - { name: "Python QA", path: ".agents/knowledge/KNOWLEDGE_QA.md" }
+    - { name: "UI/UX Design", path: ".agents/knowledge/KNOWLEDGE_DESIGN.md" }
+    - { name: "Tkinter UI", path: ".agents/knowledge/KNOWLEDGE_TKINTER.md" }
+
+  cloud:
+    - { name: "Cloud Monitoring", path: ".agents/cloud/CLOUD_MONITORING.md" }
+
