@@ -1,0 +1,24 @@
+# 依赖库 (Dependencies)
+node_modules/
+.venv/
+vendor/
+
+# 构建产物 (Build Artifacts)
+dist/
+build/
+out/
+bin/
+
+# 锁定文件 (Lockfiles)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Cargo.lock
+
+# 敏感/临时文件 (System/Temp)
+.git/
+.idea/
+.vscode/
+*.log
+.DS_Store
+tmp/

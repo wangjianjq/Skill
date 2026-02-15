@@ -403,6 +403,7 @@ Agents-MD-Pro/
 ├── 📄 [requirements.txt](./requirements.txt)       # Python dependencies list
 ├── 📄 [.gitignore](./.gitignore)             # Git ignore rules
 ├── 📄 [.roomodes](./.roomodes)              # Roo Code modes definition
+├── 📄 [.antigravityignore](./.antigravityignore) # Antigravity ignore rules
 │
 ├── 🤖 [CLAUDE.md](./CLAUDE.md)              # Claude Code CLI adapter
 ├── 🤖 [GEMINI.md](./GEMINI.md)              # Gemini CLI adapter
@@ -423,6 +424,9 @@ Agents-MD-Pro/
 │
 ├── 📁 [context/](./context/)               # 🧠 Dynamic Context (Memory + Status for DCIP)
 ├── 📁 [scripts/](./scripts/)               # ⚙️ Core Configuration & Utilities
+│   ├── [audit_links.ps1](./scripts/audit_links.ps1)   # Markdown link auditor (PowerShell)
+│   ├── [config.py](./scripts/config.py)         # Shared configuration
+│   └── [utils.py](./scripts/utils.py)           # Path utilities
 ├── 📁 [sandbox/](./sandbox/)               # 🧪 AI Protocol Drafting Area (Read-Write)
 ├── 📁 [.agents/](./.agents/)               # 🔴 Protocol Land (Core Rules - Read-Only)
 ├── 📁 [.trae/](./.trae/)                 # 🛠️ Trae Analysis & Documents
@@ -568,7 +572,7 @@ Each tool will **automatically load** its corresponding config file when opening
 | **Conflict Protection** | If a `bmad` folder exists, the system uses `_bmad` for runtime data |
 | **Resource Shielding** | AI ignores this README by default to save context tokens |
 | **Mandatory Boot Sequence** | AI **must** execute Boot Sequence before processing any development request |
-| **Version Sovereignty** | For legacy projects, AI reads manifests (`package.json`, `go.mod`) to select appropriate protocol rules |
+| **Tech Stack Sovereignty** | The active tech stack is defined in `PROJECT_STATUS.md`. Manifests are used only for initial initialization |
 
 ---
 
@@ -696,6 +700,7 @@ Agents-MD-Pro/
 ├── 📄 [requirements.txt](./requirements.txt)       # Python 依赖清单
 ├── 📄 [.gitignore](./.gitignore)             # Git 忽略规则
 ├── 📄 [.roomodes](./.roomodes)              # Roo Code 模式定义
+├── 📄 [.antigravityignore](./.antigravityignore) # Antigravity 忽略规则
 │
 ├── 🤖 [CLAUDE.md](./CLAUDE.md)              # Claude Code CLI 适配器
 ├── 🤖 [GEMINI.md](./GEMINI.md)              # Gemini CLI 适配器
@@ -716,6 +721,9 @@ Agents-MD-Pro/
 │
 ├── 📁 [context/](./context/)               # 🧠 动态上下文（记忆 + 状态，用于 DCIP）
 ├── 📁 [scripts/](./scripts/)               # ⚙️ 核心配置与工具库
+│   ├── [audit_links.ps1](./scripts/audit_links.ps1)   # Markdown 链接审计工具 (PowerShell)
+│   ├── [config.py](./scripts/config.py)         # 全局配置
+│   └── [utils.py](./scripts/utils.py)           # 路径处理工具
 ├── 📁 [sandbox/](./sandbox/)               # 🧪 AI 协议草稿区（读写）
 ├── 📁 [.agents/](./.agents/)               # 🔴 协议域（核心规则 - 只读）
 ├── 📁 [.trae/](./.trae/)                 # 🛠️ Trae 分析与文档存储
@@ -1073,7 +1081,7 @@ python .agents/skills/memory-guardian/scripts/cleanup.py
 | **目录冲突保护** | 若检测到同名 `bmad` 目录，系统将使用 `_bmad` 作为运行时目录 |
 | **静态资源屏蔽** | AI 默认不读取本说明文件，避免干扰 |
 | **强制启动序列** | AI **必须**在处理任何开发请求前执行 Boot Sequence |
-| **版本主权** | 对于存量项目，AI 读取清单文件（`package.json`、`go.mod`）选择相应协议规则 |
+| **技术栈主权** | 活跃技术栈由 `PROJECT_STATUS.md` 定义。清单文件仅用于初始检测 |
 
 ---
 
