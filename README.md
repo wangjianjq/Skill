@@ -1122,7 +1122,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 
 <div align="center">
   <a href="https://clustrmaps.com/site/1c99n" title="Visit tracker">
-    <img src="https://clustrmaps.com/map_v2.png?cl=ffffff&w=600&t=tt&d=WyPXhwt5hlcyzifNgRrDC76u0fKccZJE9Pljiyrl7nQ" />
+    <img src="https://clustrmaps.com/map_v2.png?cl=ffffff&w=a&t=tt&d=WyPXhwt5hlcyzifNgRrDC76u0fKccZJE9Pljiyrl7nQ&ct=f27e17" />
   </a>
 </div>
 
@@ -1135,6 +1135,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 - **[点击下载 Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
 
 [⬆ 返回顶部](#top)
+
 
 
 
