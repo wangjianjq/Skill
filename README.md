@@ -1120,9 +1120,11 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 > AI 协同编码环境，显著提升从原型到交付的全程可控性与专业度。
 >
 > 
-<body> 
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=WyPXhwt5hlcyzifNgRrDC76u0fKccZJE9Pljiyrl7nQ&cl=ffffff&w=a"></script>
-</body>
+<div align="center">
+  <a href="https://clustrmaps.com/site/1bxe2">
+    <img src="https://clustrmaps.com/map_v2.png?d=WyPXhwt5hlcyzifNgRrDC76u0fKccZJE9Pljiyrl7nQ&cl=ffffff&w=a" />
+  </a>
+</div>
 
 ## Star 历史
 
@@ -1133,6 +1135,7 @@ BMad 是一种 AI 驱动的敏捷开发框架，具备 21+ 专业代理、50+ �
 - **[点击下载 Skill.zip](https://github.com/wangjianjq/Skill/releases/download/Skill-LIB/Skill.zip)**
 
 [⬆ 返回顶部](#top)
+
 
 
 
